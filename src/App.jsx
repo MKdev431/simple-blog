@@ -1,7 +1,15 @@
-import "./App.css";
+import "./styles/App.css";
+
+import Nav from "./components/Nav";
+import Pages from "./Pages";
 
 function App() {
-  return <div>it works</div>;
+  return (
+    <div className="app">
+      <Nav />
+      <Pages />
+    </div>
+  );
 }
 
 export default App;
