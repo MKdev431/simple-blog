@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+import Post from "./Post";
+
 const PostList = () => {
   const [blogs, setBlogs] = useState([]);
 
@@ -14,16 +16,16 @@ const PostList = () => {
 
   return (
     <div className="postList">
-      {blogs.map(blog => (
-        <div
-          className="post"
-          key={blog.id}
-        >
-          <div className="blog-title">{blog.title}</div>
-          <div className="blog-text">{blog.body}</div>
-          <div className="author">{blog.author}</div>
-        </div>
-      ))}
+      <ul>
+        {blogs.map(blog => (
+          <Post
+            className="post"
+            key={blog.id}
+            id={blog.id}
+            title={blog.title}
+          />
+        ))}
+      </ul>
     </div>
   );
 };

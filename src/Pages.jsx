@@ -1,6 +1,7 @@
 import Home from "./Pages/Home";
 // import PostList from "./Pages/PostList";
 import NewPost from "./Pages/NewPost";
+import PostDetails from "./Pages/PostDetails";
 import { Routes, Route } from "react-router-dom";
 
 const Pages = () => {
@@ -14,6 +15,10 @@ const Pages = () => {
         <Route
           path="/new-post"
           element={<NewPost />}
+        />
+        <Route
+          path="/post/:id"
+          element={<PostDetails />}
         />
       </Routes>
     </div>

@@ -7,7 +7,7 @@ const NewPost = () => {
 
   const submitHandler = e => {
     e.preventDefault();
-    fetch("http://localhost:8000/blogss", {
+    fetch("http://localhost:8000/blogs", {
       method: "POST",
       headers: {
         "Content-type": "application/json; charset=UTF-8",
