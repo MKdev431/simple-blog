@@ -1,25 +1,23 @@
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import useFetch from "../useFetch";
 
-const PostDetails = () => {
-  const [post, setPost] = useState([]);
+const PostDetails = ({ deleteHandler }) => {
   const { id } = useParams();
-
-  useEffect(() => {
-    const fetchDetails = async () => {
-      const response = await fetch(`http://localhost:8000/blogs/${id}`);
-      const data = await response.json();
-      setPost(data);
-    };
-    fetchDetails();
-  }, []);
+  const { data: post, isLoading, error } = useFetch(`http://localhost:8000/blogs/${id}`);
 
   return (
-    <div className="details-wrapper">
-      <h1>{post.title}</h1>
-      <p>{post.body}</p>
-      <h2>{post.author}</h2>
-    </div>
+    <>
+      {isLoading && !error && <div>Loading data...</div>}
+      {error && <div>{error.message}</div>}
+      {post && (
+        <div className="details-wrapper">
+          <h1>{post.title}</h1>
+          <p>{post.body}</p>
+          <h2>{post.author}</h2>
+          <button>Delete post</button>
+        </div>
+      )}
+    </>
   );
 };
 

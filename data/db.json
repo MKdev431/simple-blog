@@ -29,6 +29,36 @@
       "body": "test 30.10.23",
       "author": "Mike",
       "id": 5
+    },
+    {
+      "title": "test2",
+      "body": "some random text",
+      "author": "Seba",
+      "id": 6
+    },
+    {
+      "title": "test3",
+      "body": "some random text2",
+      "author": "Seba",
+      "id": 7
+    },
+    {
+      "title": "test4",
+      "body": "some random text5",
+      "author": "Seba",
+      "id": 8
+    },
+    {
+      "title": "daads",
+      "body": "dsaasd",
+      "author": "Seba",
+      "id": 9
+    },
+    {
+      "title": "dasdasadsadsdasadsdasdasad",
+      "body": "da123",
+      "author": "Seba",
+      "id": 10
     }
   ]
 }
