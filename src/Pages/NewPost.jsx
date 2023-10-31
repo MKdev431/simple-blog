@@ -2,21 +2,25 @@ import { useState } from "react";
 
 const NewPost = () => {
   const [title, setTitle] = useState("");
-  const [text, setText] = useState("");
+  const [body, setBody] = useState("");
   const [author, setAuthor] = useState("Mike");
 
   const submitHandler = e => {
     e.preventDefault();
+    const blog = { title, body, author };
+
     fetch("http://localhost:8000/blogs", {
       method: "POST",
       headers: {
         "Content-type": "application/json; charset=UTF-8",
       },
-      body: JSON.stringify({
-        title: title,
-        body: text,
-        author: author,
-      }),
+      body: JSON.stringify(blog),
+
+      // body: JSON.stringify({
+      //   title: title,
+      //   body: body,
+      //   author: author,
+      // })
     })
       .then(response => {
         {
@@ -42,7 +46,7 @@ const NewPost = () => {
         <label>Post text</label>
         <textarea
           placeholder="text"
-          onChange={e => setText(e.target.value)}
+          onChange={e => setBody(e.target.value)}
         ></textarea>
         <label>Post author</label>
         <select onChange={e => setAuthor(e.target.value)}>

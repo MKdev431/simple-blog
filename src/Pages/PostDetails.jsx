@@ -10,7 +10,6 @@ const PostDetails = () => {
       const response = await fetch(`http://localhost:8000/blogs/${id}`);
       const data = await response.json();
       setPost(data);
-      console.log(data);
     };
     fetchDetails();
   }, []);

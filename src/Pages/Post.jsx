@@ -1,15 +1,9 @@
-import { NavLink } from "react-router-dom";
-import PostDetails from "./PostDetails";
+import { Link } from "react-router-dom";
 
 const Post = ({ title, id }) => {
   return (
     <li>
-      <NavLink
-        to={`post/${id}`}
-        element={<PostDetails />}
-      >
-        {title}
-      </NavLink>
+      <Link to={`post/${id}`}>{title}</Link>
     </li>
   );
 };

@@ -7,20 +7,10 @@ const Nav = () => {
     <div className="nav">
       <ul>
         <li>
-          <Link
-            to={"/"}
-            element={<Home />}
-          >
-            Home
-          </Link>
+          <Link to={"/"}>Home</Link>
         </li>
         <li>
-          <Link
-            to={"/new-post"}
-            element={<NewPost />}
-          >
-            New Post
-          </Link>
+          <Link to={"/new-post"}>New Post</Link>
         </li>
       </ul>
     </div>
