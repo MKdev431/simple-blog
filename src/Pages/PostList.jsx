@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Post from "./Post";
 
 const PostList = () => {
-  const [blogs, setBlogs] = useState([]);
+  const [blogs, setBlogs] = useState(null);
 
   useEffect(() => {
     const fetchPosts = async () => {
