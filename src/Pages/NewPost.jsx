@@ -7,14 +7,14 @@ const NewPost = () => {
   const [author, setAuthor] = useState("Mike");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [postSubmitted, setPostsubmitted] = useState(false);
+  const [postSubmitted, setPostSubmitted] = useState(false);
   const navigate = useNavigate();
 
   const submitHandler = e => {
     e.preventDefault();
     setIsLoading(true);
     setError(null);
-    setPostsubmitted(false);
+    setPostSubmitted(false);
 
     const blog = { title, body, author };
 
@@ -43,10 +43,10 @@ const NewPost = () => {
         .then(response => console.log(response))
         .catch(error => setError(error));
       setIsLoading(false);
-      setPostsubmitted(true);
+      setPostSubmitted(true);
       setTimeout(() => {
         navigate("/");
-        setPostsubmitted(false);
+        setPostSubmitted(false);
       }, 3000);
     }, 3000);
   };

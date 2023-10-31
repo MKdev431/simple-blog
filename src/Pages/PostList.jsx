@@ -13,7 +13,6 @@ const PostList = () => {
         <ul>
           {posts.map(blog => (
             <Post
-              className="post"
               key={blog.id}
               id={blog.id}
               title={blog.title}

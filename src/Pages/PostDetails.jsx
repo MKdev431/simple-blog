@@ -1,5 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom";
 import useFetch from "../useFetch";
+import Button from "react-bootstrap/button";
 
 const PostDetails = () => {
   const { id } = useParams();
@@ -22,7 +23,7 @@ const PostDetails = () => {
           <h1>{post.title}</h1>
           <p>{post.body}</p>
           <h2>{post.author}</h2>
-          <button onClick={() => deleteHandler(id)}>Delete post</button>
+          <Button onClick={() => deleteHandler(id)}>Delete post</Button>
         </div>
       )}
     </>
