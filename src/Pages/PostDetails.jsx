@@ -1,9 +1,17 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import useFetch from "../useFetch";
 
-const PostDetails = ({ deleteHandler }) => {
+const PostDetails = () => {
   const { id } = useParams();
   const { data: post, isLoading, error } = useFetch(`http://localhost:8000/blogs/${id}`);
+  const navigate = useNavigate();
+
+  const deleteHandler = () => {
+    fetch(`http://localhost:8000/blogs/${id}`, {
+      method: "DELETE",
+    });
+    navigate("/");
+  };
 
   return (
     <>
@@ -14,7 +22,7 @@ const PostDetails = ({ deleteHandler }) => {
           <h1>{post.title}</h1>
           <p>{post.body}</p>
           <h2>{post.author}</h2>
-          <button>Delete post</button>
+          <button onClick={() => deleteHandler(id)}>Delete post</button>
         </div>
       )}
     </>
