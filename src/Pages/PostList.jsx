@@ -1,16 +1,15 @@
 import useFetch from "../useFetch";
-
 import Post from "./Post";
 
 const PostList = () => {
   const { data: posts, isLoading, error } = useFetch("http://localhost:8000/blogs/");
 
   return (
-    <div className="postList">
+    <div className="container">
       {isLoading && !error && <div>Loading data...</div>}
       {error && <div>{error.message}</div>}
       {posts && (
-        <ul>
+        <div>
           {posts.map(blog => (
             <Post
               key={blog.id}
@@ -18,7 +17,7 @@ const PostList = () => {
               title={blog.title}
             />
           ))}
-        </ul>
+        </div>
       )}
     </div>
   );

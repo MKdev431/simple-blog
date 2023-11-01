@@ -1,12 +1,11 @@
 import Home from "./Pages/Home";
-// import PostList from "./Pages/PostList";
 import NewPost from "./Pages/NewPost";
 import PostDetails from "./Pages/PostDetails";
 import { Routes, Route } from "react-router-dom";
 
 const Pages = () => {
   return (
-    <div className="pages">
+    <div>
       <Routes>
         <Route
           path="/"
