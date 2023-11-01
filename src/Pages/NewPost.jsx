@@ -52,25 +52,39 @@ const NewPost = () => {
   };
 
   return (
-    <div className="newPost">
-      <form onSubmit={submitHandler}>
-        <label>Post title</label>
-        <input
-          type="text"
-          placeholder="title"
-          onChange={e => setTitle(e.target.value)}
-        />
-        <label>Post text</label>
-        <textarea
-          placeholder="text"
-          onChange={e => setBody(e.target.value)}
-        ></textarea>
-        <label>Post author</label>
-        <select onChange={e => setAuthor(e.target.value)}>
-          <option value="Mike">Mike</option>
-          <option value="Seba">Seba</option>
-        </select>
-        {!isLoading && !error && <button>Send</button>}
+    <div className="container mt-5 d-flex justify-content-center w-100">
+      <form
+        className="w-50 d-flex flex-column text-bg-light border rounded-1"
+        onSubmit={submitHandler}
+      >
+        <div className="form-floating m-3">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="title"
+            onChange={e => setTitle(e.target.value)}
+          />
+          <label className="form-label">Post title</label>
+        </div>
+        <div className="form-floating m-3">
+          <textarea
+            className="form-control"
+            placeholder="text"
+            onChange={e => setBody(e.target.value)}
+          ></textarea>
+          <label className="form-label">Post text</label>
+        </div>
+        <div className="m-3">
+          <label className="form-label">Post author</label>
+          <select
+            className="form-select"
+            onChange={e => setAuthor(e.target.value)}
+          >
+            <option value="Mike">Mike</option>
+            <option value="Seba">Seba</option>
+          </select>
+        </div>
+        {!isLoading && !error && <button className="btn btn-primary m-3">Send</button>}
         {isLoading && <button disabled={true}>Loading</button>}
         {error && <div>{error.message}</div>}
         {postSubmitted && <div>Post submitted successully. You will be redirected to the homepage in a second.</div>}
