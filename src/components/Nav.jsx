@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import Container from "react-bootstrap/Container";
 
 const Navi = () => {
   return (
@@ -9,7 +8,7 @@ const Navi = () => {
       bg="dark"
       data-bs-theme="dark"
     >
-      <Container>
+      <div className="container">
         <Navbar.Brand>
           <Link
             to={"/"}
@@ -38,7 +37,7 @@ const Navi = () => {
             </Nav.Item>
           </div>
         </Nav>
-      </Container>
+      </div>
     </Navbar>
   );
 };

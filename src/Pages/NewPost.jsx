@@ -85,7 +85,7 @@ const NewPost = () => {
           </select>
         </div>
         {!isLoading && !error && <button className="btn btn-primary m-3">Send</button>}
-        {isLoading && <button disabled={true}>Loading</button>}
+        {isLoading && <button className="btn btn-primary m-3 disabled">Loading...</button>}
         {error && <div>{error.message}</div>}
         {postSubmitted && <div>Post submitted successully. You will be redirected to the homepage in a second.</div>}
       </form>
